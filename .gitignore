@@ -1,0 +1,8 @@
+docs/_build/
+
+# python virtual environment
+.venv/
+
+# python build artifacts
+*.egg-info
+__pycache__/
