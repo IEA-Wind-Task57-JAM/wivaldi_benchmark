@@ -29,6 +29,5 @@ How to Participate
    description
    wivaldi
    phase_I
-   phase_II
-   submissions
+   .. submissions
    contact
