@@ -21,6 +21,7 @@ How to Participate
 - Review the page :doc:`description` for campaign context and motivation.
 - Contact the benchmark leader and participate in working group meetings.
 - Submit modeling results following guidelines given in the :doc:`submissions` page.
+- A detailed description of the provided files for the modeled wind turbine is given here: :doc:`turbine_model`
 
 .. toctree::
    :maxdepth: 3
@@ -29,5 +30,6 @@ How to Participate
    description
    wivaldi
    phase_I
+   turbine_model
    .. submissions
    contact

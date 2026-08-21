@@ -134,12 +134,12 @@ The two wind turbines OPUS1 and OPUS2 have the following basic characteristics:
      - 115.7 m
    * - rated power
      - 4.26 MW
-..  * - cut-in wind speed
-..    - 2.5 m/s
-..  * - rated wind speed
-..    - 13 m/s
-..  * - cut-out wind speed
-..    - 34 m/s
+   * - cut-in wind speed
+     - 2.5 m/s
+   * - rated wind speed
+     - 13 m/s
+   * - cut-out wind speed
+     - 34 m/s
 
 
 Meteorological measurements
@@ -193,3 +193,20 @@ Here, we list the wind an temperature sensors that are used in the benchmark dat
      - Temperaturdifferenzsensor Bauart Risoe P1867
      - 62 m
 
+Wind lidar and Microwave radiometer profiling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. image:: images/lidar_leitwarte_dach.png
+
+A Doppler wind lidar and a microwave radiometer (MWR) were installed next to or on top of the Leitwarte (North-East of OPUS2) since 2020. The instruments provide vertical profiles of 3D wind, turbulence temperature and humidity throughout the ABL. 
+Details about the measurement principle and data quality can be found here: 
+
+Wildmann, Norman und Hagen, Martin und Gerz, Thomas (2022) Enhanced resource assessment and atmospheric monitoring of the research wind farm WiValdi. Journal of Physics: Conference Series, 2265 (2), 022029. Institute of Physics (IOP) Publishing. doi: 10.1088/1742-6596/2265/2/022029. ISSN 1742-6588. 
+
+
+Nacelle-based lidar measurements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Details of the nacelle-based lidar measurements will be used for the validation of downstream (wake) flow and are described here:
+:doc:`/lidar_wake`
