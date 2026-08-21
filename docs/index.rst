@@ -29,7 +29,7 @@ How to Participate
 
    description
    wivaldi
-   phase_I
+   test_data
    turbine_model
    .. submissions
    contact
