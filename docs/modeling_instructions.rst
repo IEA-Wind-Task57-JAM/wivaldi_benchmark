@@ -22,13 +22,13 @@ Workflow LES modeling (same for each phase):
 Turbine models for simulations
 ------------------------------
 
-(todo: other turbine model settings for pywake etc.)
+(turbine model settings for pywake etc.)
 
 NREL-5MW for ADM/ALM-LES
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-**NREL5MW.vel** (todo: click name to get to  file)
+'**NREL5MW.vel**
 
 This file contains velocity dependent information (cutin and cutout wind speed)
 
@@ -104,4 +104,4 @@ This files contains Information of
 
 **NREL5MW.cd**
 
-same as NREL5MW.cl, the other columns represent now the cd values
+same as NREL5MW.cl, the other columns represent now the cd values.
