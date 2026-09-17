@@ -31,5 +31,6 @@ How to Participate
    wivaldi
    test_data
    modeling_instructions
+   output_instructions
    .. submissions
    contact
