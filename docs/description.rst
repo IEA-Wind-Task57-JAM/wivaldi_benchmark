@@ -14,13 +14,3 @@ The overarching research questions are:
 - How large are the uncertainties in the models and how does that translate to power and load estimation uncertainty?
 - How well do models perform if two wakes interact under complex atmospheric inflow?
 
-
-Phase I
--------
-
-Content will be added later. For now, see :doc:`/test_data`.
-
-.. Phase II
-.. --------
-
-.. Content will be added later. See :doc:`phase_II`.

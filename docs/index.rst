@@ -29,7 +29,7 @@ How to Participate
 
    description
    wivaldi
-   test_data
+   phase_I
    modeling_instructions
    output_instructions
    .. submissions
