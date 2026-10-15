@@ -30,7 +30,7 @@ The following meteorological conditions are observed at hub height (92 m) in the
      - 21.02.2026, 14:30
      - 21.02.2026, 16:10
      - 01.03.2026, 02:30
-     - 04.05.2026, 18:12
+     - 05.04.2026, 18:12
      - 16.05.2026, 18:14
      - Average
    * - U / m/s
