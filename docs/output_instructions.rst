@@ -13,14 +13,14 @@ The output_file_IEA.nc includes 40 variables for the inflow, at the rotor and in
 
 
 
-
 **Inflow variables:**
 
 - All variables start with **inflow_**.
 - The dimensions of the variables include:
-    - time = 11  number of output time steps, covering 10 min, 1 min per time step
+    - time = 11  number of output time steps, covering 10 min, 1 min per time step (for the inflow fields of the boundary layer added to this file, the 11 time steps should match with the corresponding 11 time steps of the turbine wake field)
     - y = 233  number of gp in y direction (2m spacing covering 4D)
     - z_BL = 1001  number of gp in z direction (2m spacing covering 2000m), lowest grid point at 0m
+    - n_res_sgs = 2 for the resolved contribution put it to 0, and for the SGS contribution put it to 1
 - The second part of the name is the variable itself.
 - Following inflow variables are included:
 
@@ -49,25 +49,25 @@ The output_file_IEA.nc includes 40 variables for the inflow, at the rotor and in
      - subgrid-scale turbulent kinetic energy
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uu
-     - Reynolds stress u'u'
+     - Reynolds stress u'u' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - vv
-     - Reynolds stress v'v'
+     - Reynolds stress v'v' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - ww
-     - Reynolds stress w'w'
+     - Reynolds stress w'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uv
-     - Reynolds stress u'v'
+     - Reynolds stress u'v' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - vw
-     - Reynolds stress v'w'
+     - Reynolds stress v'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uw
-     - Reynolds stress u'w'
+     - Reynolds stress u'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - wth
-     - w'theta'
+     - w'theta' resolved and SGS (in two separate terms)
      - :math:`\mathrm{K\,m\,s^{-1}}`
    * - momentum
      - | inflow momentum flux at the surface 
@@ -123,9 +123,10 @@ In addition we ask for the rotor thrust T (N) and torque Q (N m). Here both fiel
 
 - All variables start with **wake_**.
 - The dimensions of the variables include:
-    - time = 11  number of output time steps, covering 10 min, 1 min per time step
+    - time = 11  number of output time steps, covering 10 min, 1 min per time step (start with the output of instantaneous fields and the averaging, as soon as your wind-turbine simulation reaches a statistical equilibrium; indicated by changes below 1–2% in mean velocity, 5% in RMS velocity fluctuations, and 5–10% in Reynolds stresses)
     - y = 233  number of gp in y direction (2m spacing covering 4D)
     - z_WT = 151  number of gp in z direction (2m spacing covering 300m), lowest grid point at 0m
+    - n_res_sgs = 2 for the resolved contribution put it to 0, and for the SGS contribution put it to 1
     - pos = 28  number of wake planes (8 planes from 0.5-4D of upwind turbine, 20 planes from 0.5-10D of downwind turbine, distance between upwind and downwind turbine is 508m in full wake position)
 
 - Following wake variables are included:
@@ -154,25 +155,25 @@ In addition we ask for the rotor thrust T (N) and torque Q (N m). Here both fiel
      - subgrid-scale turbulent kinetic energy
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uu
-     - Reynolds stress u'u'
+     - Reynolds stress u'u' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - vv
-     - Reynolds stress v'v'
+     - Reynolds stress v'v' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - ww
-     - Reynolds stress w'w'
+     - Reynolds stress w'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uv
-     - Reynolds stress u'v'
+     - Reynolds stress u'v' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - vw
-     - Reynolds stress v'w'
+     - Reynolds stress v'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - uw
-     - Reynolds stress u'w'
+     - Reynolds stress u'w' resolved and SGS (in two separate terms)
      - :math:`\mathrm{m^2\,s^{-2}}`
    * - wth
-     - w'theta'
+     - w'theta' resolved and SGS (in two separate terms)
      - :math:`\mathrm{K\,m\,s^{-1}}`
    
 - The last part of the name defines if the values should be instantaneous or time averaged. 
@@ -211,25 +212,25 @@ In the following, all 40 variables are listed:
   inflow_TKESGS_timeav(y, z_BL) float32 [m2/s2]
       inflow SGS TKE time averaged component at -2D
       included=false, all NaN
-  inflow_uu_timeav(y, z_BL) float32 [m2/s2]
+  inflow_uu_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow u'u' time averaged component at -2D
       included=false, all NaN
-  inflow_vv_timeav(y, z_BL) float32 [m2/s2]
+  inflow_vv_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow v'v' time averaged component at -2D
       included=false, all NaN
-  inflow_ww_timeav(y, z_BL) float32 [m2/s2]
+  inflow_ww_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow w'w' time averaged component at -2D
       included=false, all NaN
-  inflow_uv_timeav(y, z_BL) float32 [m2/s2]
+  inflow_uv_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow u'v' time averaged component at -2D
       included=false, all NaN
-  inflow_vw_timeav(y, z_BL) float32 [m2/s2]
+  inflow_vw_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow v'w' time averaged component at -2D
       included=false, all NaN
-  inflow_uw_timeav(y, z_BL) float32 [m2/s2]
+  inflow_uw_timeav(n_res_sgs, y, z_BL) float32 [m2/s2]
       inflow u'w' time averaged component at -2D
       included=false, all NaN
-  inflow_wth_timeav(y, z_BL) float32 [K m/s]
+  inflow_wth_timeav(n_res_sgs, y, z_BL) float32 [K m/s]
       inflow w'theta' time averaged component at -2D
       included=false, all NaN
   inflow_momentum_0(time) float32 [m2/s2]
@@ -283,25 +284,25 @@ In the following, all 40 variables are listed:
   wake_th_timeav(y, z_WT, pos) float32 [K]
       wake potential temperature time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_uu_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_uu_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake u'u' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_vv_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_vv_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake v'v' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_ww_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_ww_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake w'w' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_uv_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_uv_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake u'v' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_vw_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_vw_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake v'w' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_uw_timeav(y, z_WT, pos) float32 [m2/s2]
+  wake_uw_timeav(n_res_sgs, y, z_WT, pos) float32 [m2/s2]
       wake u'w' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
-  wake_wth_timeav(y, z_WT, pos) float32 [K m/s]
+  wake_wth_timeav(n_res_sgs, y, z_WT, pos) float32 [K m/s]
       wake w'theta' time averaged component at wake planes 0.5 to 4D behind upwind turbine and 0.5 to 10D behind downwind turbine in 0.5D steps
       included=false, all NaN
 0 of 40 variables flagged included

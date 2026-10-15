@@ -49,6 +49,14 @@ The following meteorological conditions are observed at hub height (92 m) in the
      - 260.6
      - 261.3
      - 261.3
+   * - Yaw / °
+     - 259
+     - 260
+     - 257.5
+     - 259
+     - 259.5
+     - 259.5
+     - 259
    * - TI / %
      - 7.7
      - 7.8
