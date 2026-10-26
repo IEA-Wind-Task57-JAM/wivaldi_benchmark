@@ -1,24 +1,48 @@
-Benchmark Phase 1
+Benchmark Phase 1 - Full Wake, Neutral ABL
 =============================================
+
+Logistics
+---------
+
+* Start Date: TBD
+* Submission Date: TBD
+
+..   
+
+* Zenodo data link: https://zenodo.org/records/23351132
+* :doc:`/turbine_model`
+* :doc:`/output_instructions`
+
+
+
 
 Case Selection and Thresholds
 -----------------------------
 The benchmark cases are selected based on specific meteorological thresholds to isolate periods of interest that represent distinct atmospheric conditions. 
 
-*   **Wind Speed Threshold:** 8 m/s < U < 10 m/s
-*   **Wind Direction Sector:** 288.5° < Ψ < 262.5°
-*   **Atmospheric Stability:** |dθ| < 0.75 K / 100m
-*   **Turbine Availability:** OPUS1 and OPUS2 in normal operation
-*   **Measurement Availability:** Mast + Nacelle lidar + Profiling lidar + MWR
+.. list-table:: Data Filtering Criteria
+   :widths: 30 70
+   :header-rows: 1
 
+   * - Parameter
+     - Condition
+   * - Wind Speed Threshold
+     - 8 m/s < U < 10 m/s
+   * - Wind Direction Sector
+     - 288.5° < Ψ < 262.5°
+   * - Atmospheric Stability
+     - \|dθ\| < 0.75 K / 100m
+   * - Turbine Availability
+     - OPUS1 and OPUS2 in normal operation, with OPUS1 producing power P > 1 MW
+   * - Measurement Availability
+     - Mast + Nacelle lidar + Profiling lidar + MWR
+  
 Filtering is based on regular 10-minute averages in first place. Adjustment to most stationary periods on a minute-scale is done manually in a second step.
 
-.. image:: images/2025-2026_filtering.png
-  :width: 80%
+.. .. image:: images/2025-2026_filtering.png
+..   :width: 80%
 
-
-
-The following meteorological conditions are observed at hub height (92 m) in the inflow for the selected periods:
+The following meteorological conditions are observed at hub height (92 m) in the inflow for the determined periods after the filter:
 
 
 .. list-table::
@@ -41,30 +65,38 @@ The following meteorological conditions are observed at hub height (92 m) in the
      - 9.3
      - 7.8
      - 9.0
-   * - Ψ / °
+   * - Ψ\ :sub:`Wind` / °
      - 261.3
-     - 262.3
+     - 262.2
      - 260.3
      - 261.7
      - 260.6
      - 261.3
-     - 261.3
-   * - Yaw / °
-     - 259
-     - 260
-     - 257.5
-     - 259
-     - 259.5
-     - 259.5
-     - 259
+     - 261.2
+   * - Ψ\ :sub:`OPUS1` / °
+     - 260.3
+     - 263.0
+     - 260.4
+     - 261.9
+     - 262.3
+     - 262.2
+     - 261.7
+   * - Ψ\ :sub:`OPUS2` / °
+     - 264.3
+     - 266.6
+     - 258.5
+     - 261.0
+     - 259.0
+     - 261.0
+     - 261.7
    * - TI / %
-     - 7.7
-     - 7.8
-     - 7.4
-     - 9.6
-     - 10.6
-     - 8.1
-     - 8.5
+     - 8.6
+     - 10.1
+     - 9.3
+     - 10.7
+     - 10.9
+     - 12.2
+     - 10.3
    * - α
      - 0.22
      - 0.35
@@ -72,7 +104,7 @@ The following meteorological conditions are observed at hub height (92 m) in the
      - 0.21
      - 0.26
      - 0.24
-     - 0.26
+     - 0.28
    * - dθ / K / 100 m
      - -0.22
      - 0.72
@@ -90,32 +122,48 @@ To create a high-quality, continuous atmospheric dataset for the benchmark, data
 Diurnal Cycle
 ^^^^^^^^^^^^^^
 
-Wind profile time-height plot up to 2000 m. On 21 February 2026 and 01 March 2026, the long-range lidar for vertical profiling is not available
+Wind profile and potential temperature time-height plot up to 2000 m. On 21 February 2026 and 01 March 2026, the long-range lidar for vertical profiling is not available, so that only ZX300 profiling data up to 300 m is shown.
+
+19.12.2025
 
 .. image:: images/202512191525_wind_diurnal.png
-  :width: 80%
-.. image:: images/202604051812_wind_diurnal.png
-  :width: 80%
-.. image:: images/202605161814_wind_diurnal.png
-  :width: 80%
-
-Potential temperature diurnal time-height plots are available for all days:
-
+  :width: 50%
 .. image:: images/20251219_theta_diurnal.png
-  :width: 80%
-.. image:: images/20260221_theta_diurnal.png
-  :width: 80%
-.. image:: images/20260301_theta_diurnal.png
-  :width: 80%
-.. image:: images/20260405_theta_diurnal.png
-  :width: 80%
-.. image:: images/20260516_theta_diurnal.png
-  :width: 80%
+  :width: 50%
 
-At the ground station of the microwave radiometer, we observe the following dirunal cycles:
+21.02.2026
+
+.. image:: images/202602211430_wind_diurnal_zx.png
+  :width: 50%
+.. image:: images/20260221_theta_diurnal.png
+  :width: 50%
+
+01.03.2026
+
+.. image:: images/202603010230_wind_diurnal_zx.png
+  :width: 50%
+.. image:: images/20260301_theta_diurnal.png
+  :width: 50%
+
+05.04.2026
+
+.. image:: images/202604051812_wind_diurnal.png
+  :width: 50%
+.. image:: images/20260405_theta_diurnal.png
+  :width: 50%
+
+16.05.2026
+
+.. image:: images/202605161814_wind_diurnal.png
+  :width: 50%
+.. image:: images/20260516_theta_diurnal.png
+  :width: 50%
+
+
+At the ground station of the microwave radiometer, we observe the following diurnal cycles:
 
 .. image:: images/ground_met_diurnal.png
-  :width: 80%
+  :width: 60%
 
 
 Vertical Grid and Temporal Averaging
@@ -130,40 +178,40 @@ The wind speed and wind direction profiles are constructed using a tiered approa
 *   **Bias Correction:** The combined lidar profile is bias-corrected to match the meteorological mast. The offset is calculated at the highest overlapping valid mast measurement, and this scalar shift is applied to the entire lidar profile. For wind direction, this correction calculates the shortest angular difference.
 *   **Splicing:** The final profile utilizes the mast data where available. For wind speed, lidar data fills the heights above the mast, and a power-law extrapolation (fitted to the lowest 200 m of the raw data) acts as a fallback if lidar data is missing. For wind direction, mast data is strictly used above 30 m, falling back to lidar data at other heights, with the topmost valid measurement forward-filled if high-altitude data is absent. 
 
-This yields the following profiles up to 2000 m:
+This yields the following profiles up to 1000 m:
 
 .. image:: images/202512191525_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202602211430_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202602211610_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202603010230_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202604051812_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202605161814_wspeed_pro.png
-  :width: 80%
+  :width: 30%
 
 In the rotor layer, including turbulence as error bars, interpolated from mast sonics and cup anemometers:
 
 .. image:: images/202512191525_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202602211430_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202602211610_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202603010230_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202604051812_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 .. image:: images/202605161814_wspeed_pro_rotor.png
-  :width: 80%
+  :width: 30%
 
 
 Potential Temperature Combination (Mast and MWR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A continuous potential temperature profile is generated by combining the high-resolution mast data with the MWR measurements. The MWR data is interpolated to the exact height of the topmost valid mast temperature measurement, and an offset is applied to force agreement at this boundary. The bias-corrected MWR profile is spliced above the mast data, and the combined dataset is interpolated to the 2 m target grid
+A continuous potential temperature profile is generated by combining the high-resolution mast data with the MWR measurements. The MWR data is interpolated to the exact height of the topmost valid mast temperature measurement, and an offset is applied to force agreement at this boundary. The bias-corrected MWR profile is spliced above the mast data, and the combined dataset is interpolated to the 2 m target grid.
 
 
 
@@ -173,5 +221,3 @@ For a single case-study simulation, we suggest an averaged profile of all cases.
 
 .. image:: images/profiles_combined.png
   :width: 80%
-
-

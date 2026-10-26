@@ -1,6 +1,18 @@
 Output Instructions
 ===================
 
+
+- LES Domain layout: the participants are free to choose the resolution and domain size which they assume as suitable for their individual setup and fluid solver, as long as the requirements for the output files can be fulfilled (see :doc:`submissions`)
+- Coordinate system for the output files:
+
+.. image:: images/output_domain.png
+
+- Format of the output files:
+    - Instantaneous and 10 Minute average of a persisting wake
+
+.. image:: images/output_format.png
+
+
 The output_file_IEA.nc includes 40 variables for the inflow, at the rotor and in the wake. This is the first part of the name of the variable.
 
 **General comments:**

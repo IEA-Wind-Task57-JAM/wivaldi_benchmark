@@ -141,6 +141,8 @@ The two wind turbines OPUS1 and OPUS2 have the following basic characteristics:
    * - cut-out wind speed
      - 34 m/s
 
+While data of the turbine operational state (e.g. electrical power) can be obtained from the SCADA system, an independent Trimble dual-GPS measurement system is installed to obtain a more precise yaw measurement.
+
 
 Meteorological measurements
 ---------------------------

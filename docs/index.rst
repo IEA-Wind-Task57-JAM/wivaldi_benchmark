@@ -30,7 +30,7 @@ How to Participate
    description
    wivaldi
    phase_I
-   modeling_instructions
-   output_instructions
+   turbine_model
+   submissions
    .. submissions
    contact
