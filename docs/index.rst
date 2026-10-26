@@ -21,7 +21,7 @@ How to Participate
 - Review the page :doc:`description` for campaign context and motivation.
 - Contact the benchmark leader and participate in working group meetings.
 - Submit modeling results following guidelines given in the :doc:`submissions` page.
-- Detailed modeling instructions including turbine data is given here: :doc:`modeling_instructions`
+- Detailed modeling instructions including turbine data is given in the description for the different benchmark phases: :doc:`/phase_I`
 
 .. toctree::
    :maxdepth: 3
