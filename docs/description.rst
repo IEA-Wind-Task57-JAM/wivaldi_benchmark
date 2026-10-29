@@ -14,3 +14,11 @@ The overarching research questions are:
 - How large are the uncertainties in the models and how does that translate to power and load estimation uncertainty?
 - How well do models perform if two wakes interact under complex atmospheric inflow?
 
+Benchmark Phases
+----------------
+
+The envisioned phases of the benchmark are:
+
+* Phase 1: Full Wake, Neutral ABL --> :doc:`/phase_I`
+* Phase 2: Full Wake, Stable ABL
+* Phase 3: Partial Wake, to be defined
