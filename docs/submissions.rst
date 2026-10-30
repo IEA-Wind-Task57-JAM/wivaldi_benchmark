@@ -2,27 +2,33 @@ Submission Instructions
 ===================
 
 
-- Domain layout: the participants are free to choose the resolution and domain size which they assume as suitable for their individual setup and fluid solver, as long as the requirements for the output files can be fulfilled (see :doc:`submissions`)
-- Coordinate system for the output files:
+- Domain layout: the participants are free to choose the resolution and domain size which they assume as suitable for their individual setup and fluid solver, as long as the requirements for the output files can be fulfilled (see details below)
+- The coordinate system for the output files is the turbine fixed frame OPUS1 (X\ :sub:`OPUS1`; Y\ :sub:`OPUS1`):
+
+.. image:: images/coordinate_system.png
+     :scale: 50%
+     :align: center
 
 .. image:: images/output_domain.png
 
-- Format of the output files:
-    - Instantaneous and 10 Minute average of a persisting wake
+In this sketch, the yaw misalignment is 0 and therefore Ψ\ :sub:`OPUS1` = Ψ\ :sub:`Wind` (see benchmark phase description for the actual values).
+If any case, the 2D output planes in the wake are perpendicular to the OPUS 1 rotor plane.
 
-.. image:: images/output_format.png
-
-
-The output_file_IEA.nc includes 40 variables for the inflow, at the rotor and in the wake. This is the first part of the name of the variable.
+Format of the output files:
+  - The IEA_WiValdi.nc includes 40 variables for the inflow, at the rotor and in the wake. 
+  - When sending back please name it IEA\_WiValdi\_ *phasenr* \_ *casenr* \_ *solver* \_ *contact* .nc.
 
 ..
 
-You can download the file here: *Zenodo-Link*
+You can download the file here: https://zenodo.org/records/23807317
 
+.. image:: images/output_format.png
 
+-----------------------------------------------
 
 **General comments:**
 
+- The file includes the following metadata: institution, contact, phase of benchmark, date (or case number), solver 
 - Each variable is set to false and includes NaNs. 
 - If you modified a variable with simulation values, please set it to true. 
 - If not all heights are covered by the simulation, leave the rest at NaN. 
@@ -145,7 +151,7 @@ In addition we ask for the rotor thrust T (N) and torque Q (N m). Here both fiel
     - y = 233  number of gp in y direction (2m spacing covering 4D)
     - z_WT = 151  number of gp in z direction (2m spacing covering 300m), lowest grid point at 0m
     - n_res_sgs = 2 for the resolved contribution put it to 0, and for the SGS contribution put it to 1
-    - pos = 28  number of wake planes (8 planes from 0.5-4D of upwind turbine, 20 planes from 0.5-10D of downwind turbine, distance between upwind and downwind turbine is 508m in full wake position)
+    - pos = 28  number of wake planes (8 planes from 0.5-4D of upwind turbine, 20 planes from 0.5-10D of downwind turbine, direct distance between upwind and downwind turbine is 508m in full wake position, the planes are perpendicular to Ψ\ :sub:`OPUS1`, in detail perpendicular to yawed OPUS1)
 
 - Following wake variables are included:
 
