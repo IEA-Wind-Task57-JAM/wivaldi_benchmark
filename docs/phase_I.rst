@@ -10,16 +10,18 @@ Logistics
 
 .. 
 
-* Start Date: TBD
-* Submission Date: TBD
+* Start Date: **02.11.2026**
+* Submission Date: **24.12.2026**
 
 ..   
 
 * Zenodo data link: https://zenodo.org/records/23351132
 * :doc:`/turbine_model`
-* :doc:`/output_instructions`
+* :doc:`/submissions`
 
+..
 
+* The benchmark is composed of an ensemble of six 10-minute periods with similar characteristics, as described below. You are expected to at least carry out a simulation of the average of all cases. If you model allows and you have the resources, you may also run the individual cases and submit those separately for analyses. 
 
 
 Case Selection and Thresholds
