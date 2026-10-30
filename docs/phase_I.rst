@@ -16,8 +16,9 @@ Logistics
 ..   
 
 * Zenodo data link: https://zenodo.org/records/23351132
-* :doc:`/turbine_model`
+* :doc:`/turbine_model` description
 * :doc:`/submissions`
+* Submission NetCDF template: https://zenodo.org/records/23807317
 
 ..
 
@@ -65,7 +66,7 @@ The following meteorological conditions are observed at hub height (92 m) in the
      - 05.04.2026, 18:12
      - 16.05.2026, 18:14
      - Average
-   * - case number
+   * - case no.
      - 1
      - 2
      - 3
