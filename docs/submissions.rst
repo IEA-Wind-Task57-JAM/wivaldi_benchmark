@@ -15,6 +15,12 @@ Submission Instructions
 
 The output_file_IEA.nc includes 40 variables for the inflow, at the rotor and in the wake. This is the first part of the name of the variable.
 
+..
+
+You can download the file here: *Zenodo-Link*
+
+
+
 **General comments:**
 
 - Each variable is set to false and includes NaNs. 
