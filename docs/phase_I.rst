@@ -36,7 +36,7 @@ The benchmark cases are selected based on specific meteorological thresholds to 
    * - Wind Speed Threshold
      - 8 m/s < U < 10 m/s
    * - Wind Direction Sector
-     - 288.5° < Ψ < 262.5°
+     - 258.5° < Ψ < 262.5°
    * - Atmospheric Stability
      - \|dθ\| < 0.75 K / 100m
    * - Turbine Availability
